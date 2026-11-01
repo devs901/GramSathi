@@ -1,0 +1,13 @@
+services:
+  api:
+    build: { context: ., dockerfile: backend/Dockerfile }
+    ports: ["8000:8000"]
+    environment:
+      APP_ENV: production
+      SECRET_KEY: ${SECRET_KEY:?set SECRET_KEY (32+ random chars)}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:8000}
+      SEED_DEMO_DATA: "false"
+    volumes: ["gs_data:/data"]
+volumes:
+  gs_data:

@@ -1,0 +1,7 @@
+starlette>=0.40
+uvicorn>=0.30
+pydantic>=2.6
+PyJWT>=2.8
+reportlab>=4.0
+httpx>=0.27        # needed only by starlette's TestClient (tests)
+pytest>=8.0        # tests only
